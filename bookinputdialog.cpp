@@ -25,7 +25,6 @@ void BookInputDialog::on_btn_clicked()
     } catch (std::invalid_argument& ex) {
         QMessageBox messageBox;
         messageBox.critical(nullptr, "Error", ex.what());
-        messageBox.setFixedSize(500,200);
         return;
     }
 }

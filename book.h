@@ -14,6 +14,8 @@ class Book
     friend std::istream& operator>>(std::istream& is, Book& book);
 
 public:
+    static int numberOfAttributes() { return 3; }
+
     Book(const QString &author, const QString &title, const QString &year);
 
     //getters

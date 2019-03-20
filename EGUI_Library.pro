@@ -41,7 +41,8 @@ HEADERS += \
     bookinputdialog.h \
     bookfilterproxymodel.h \
     bookeditdialog.h \
-    mydialog.h
+    mydialog.h \
+    bookmodel.h
 
 FORMS += \
         mainwindow.ui

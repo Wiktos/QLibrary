@@ -16,7 +16,7 @@ public:
     BookModel(QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &) const override { return books.count(); }
-    int columnCount(const QModelIndex &) const override { return 3; }
+    int columnCount(const QModelIndex &) const override { return Book::numberOfAttributes(); }
     QVariant data(const QModelIndex &index, int role) const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 

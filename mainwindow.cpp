@@ -6,10 +6,12 @@ const std::string MainWindow::DATA_FILE_PATH = "data.txt";
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    inputDialog(&model, parent),
+    inputDialog(&model, this),
+    editDialog(this),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    resizeDialogWindows();
 
     //read data
     std::ifstream fs(DATA_FILE_PATH);
@@ -53,7 +55,8 @@ std::vector<int> MainWindow::getSelectedRowsIdx()
 
 void MainWindow::on_add_btn_clicked()
 {
-    inputDialog.show();
+    inputDialog.showNormal();
+    //inputDialog.show();
 }
 
 void MainWindow::on_clear_btn_clicked()
@@ -61,6 +64,16 @@ void MainWindow::on_clear_btn_clicked()
     ui->title_le->clear();
     ui->author_le->clear();
     ui->year_sb->setValue(0);
+}
+
+void MainWindow::resizeDialogWindows()
+{
+    const float scaleFactor= 0.4f;
+    int width = static_cast<int>(size().width() * scaleFactor);
+    int height = static_cast<int>(size().height() * scaleFactor);
+
+    inputDialog.resize(width, height);
+    editDialog.resize(width, height);
 }
 
 void MainWindow::setBooksTableViewProp()

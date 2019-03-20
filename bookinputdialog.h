@@ -9,7 +9,7 @@
 #include "bookmodel.h"
 #include "mydialog.h"
 
-class BookInputDialog : public MyDialog
+class BookInputDialog final : public MyDialog
 {
     Q_OBJECT
 
@@ -19,6 +19,8 @@ public:
     explicit BookInputDialog(BookModel *modified, QWidget *parent = nullptr);
 
     void show();
+
+    ~BookInputDialog() override = default;
 
 private slots:
     void on_btn_clicked() override;

@@ -2,6 +2,7 @@
 
 BookInputDialog::BookInputDialog(BookModel *modified, QWidget *parent) : MyDialog("Library Input New Book Dialog", parent), modified(modified)
 {
+    setWhatsThis("This window allows you to input new book to your list");
 }
 
 void BookInputDialog::show() {

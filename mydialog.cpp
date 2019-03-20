@@ -1,6 +1,6 @@
 #include "mydialog.h"
 
-MyDialog::MyDialog(const QString& title, QWidget *parent) : QWidget(parent), title(title)
+MyDialog::MyDialog(const QString& title, QWidget *parent) : QDialog(parent), title(title)
 {
     setDialogProperties();
     setComponents();
@@ -21,6 +21,7 @@ void MyDialog::setComponents()
     QWidget *btnPanel = createButtonPanel();
 
     mainLayout->addWidget(btnPanel);
+
     setLayout(mainLayout);
 }
 
@@ -31,6 +32,7 @@ QWidget* MyDialog::createInputGridPanel()
     for(unsigned int i = 0; i < components.size(); i++) {
         auto label = components[i].first;
         auto lineEdit = components[i].second;
+
         gridLayout->addWidget(label, static_cast<int>(i), 0);
         gridLayout->addWidget(lineEdit, static_cast<int>(i), 1);
     }

@@ -34,6 +34,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
+    void resizeDialogWindows();
     void setBooksTableViewProp();
     void connectFilter();
     std::vector<int> getSelectedRowsIdx();

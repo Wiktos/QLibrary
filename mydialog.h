@@ -1,7 +1,7 @@
 #ifndef MYDIALOG_H
 #define MYDIALOG_H
 
-#include <QWidget>
+#include <QDialog>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
@@ -10,7 +10,7 @@
 #include <QGridLayout>
 #include <array>
 
-class MyDialog : public QWidget
+class MyDialog : public QDialog
 {
     Q_OBJECT
 
@@ -26,6 +26,8 @@ protected:
 
 public:
     explicit MyDialog(const QString& title, QWidget *parent = nullptr);
+
+    virtual ~MyDialog() = default;
 
 private slots:
     virtual void on_btn_clicked() = 0;

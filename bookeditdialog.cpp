@@ -2,6 +2,7 @@
 
 BookEditDialog::BookEditDialog(QWidget *parent) : MyDialog("Library Edit Book Dialog", parent)
 {
+    setWhatsThis("This window allows you to edit the book which is already in your list");
 }
 
 void BookEditDialog::show() {

@@ -9,7 +9,7 @@
 #include "book.h"
 #include "mydialog.h"
 
-class BookEditDialog : public MyDialog
+class BookEditDialog final : public MyDialog
 {
     Q_OBJECT
 
@@ -20,6 +20,8 @@ public:
 
     void show();
     void setBookToModification(Book *book);
+
+    ~BookEditDialog() override = default;
 
 private slots:
     void on_btn_clicked() override;

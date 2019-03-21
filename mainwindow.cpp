@@ -55,8 +55,7 @@ std::vector<int> MainWindow::getSelectedRowsIdx()
 
 void MainWindow::on_add_btn_clicked()
 {
-    inputDialog.showNormal();
-    //inputDialog.show();
+    inputDialog.show();
 }
 
 void MainWindow::on_clear_btn_clicked()
